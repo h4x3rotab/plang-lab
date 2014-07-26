@@ -1,0 +1,9 @@
+(* simple expression *)
+
+PROGRAM IS
+BEGIN 
+
+    WRITE("hello world", 1, 2, 3);
+
+END;
+

@@ -1,0 +1,10 @@
+(* array declare *)
+
+PROGRAM IS
+    TYPE intarray IS ARRAY OF INTEGER;
+    VAR i, j : INTEGER := 1; 
+    VAR arr : intarray := INTEGER [< 1, 10 OF 2 >];
+BEGIN 
+
+END;
+

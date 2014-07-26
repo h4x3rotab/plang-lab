@@ -1,0 +1,12 @@
+(* simple expression *)
+
+PROGRAM IS
+    VAR x : INTEGER := 5 + 5;
+    VAR y : INTEGER := x - 99;
+    VAR z : INTEGER := y - 1000.3;
+    VAR m := x + y;
+    VAR N := x + 0.5;
+BEGIN 
+
+END;
+

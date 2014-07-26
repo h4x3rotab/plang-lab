@@ -1,0 +1,45 @@
+Readme for OS X
+
+
+0. 确保安装了Homebrew （http://brew.sh/）
+
+1. 使用Homebrew安装gc
+
+        brew install boehmgc
+
+    Homebrew是一个OS X下的包管理器，可以在在OS X下方便的安装各种
+    开源库。这一步就是通过Homebrew来安装Boehm GC，也就是Lab中的
+    gc6.7。
+
+2. 解压lexer.zip包
+
+3. 修改Makefile文件，删除GCDIR的值。保持GCC的值为`g++`（或`clang++`），
+    然后在CXXFLAGS后添加空格与`-lgc`。改后形如：
+
+        GCDIR =
+
+        GCC = g++
+        CXXFLAGS = -g -lgc 
+        ...
+
+4. 继续修改Makefile文件，把lexer的编译条件改为如下所示：
+
+        lexer:	main.cc basic.o pcat.yy.c
+        	$(GCC) $(CXXFLAGS) main.cc basic.o -o lexer
+
+    注意，此处修改的内容是把第二行原本的`$(GCDIR)/gc.a`删除掉。
+    
+    这是因为旧版本的库文件名称不规范，现在使用Homebrew安装的GC采用
+    了标准的命名，因此只需要向编译器传入`-lgc`就可以了。这一步是在
+    第3步中的CXXFLAGS变量中设置的。
+
+4. 修改basic.h，把
+
+        #include "/export/home/fegaras/gc/gc_cpp.h"
+        
+    改为标准的库路径：
+
+        #include <gc/gc_cpp.h>
+
+5. 在lexer目录下执行make来编译。
+

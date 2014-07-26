@@ -1,0 +1,15 @@
+(* Some unary op tests. *)
+PROGRAM IS
+    VAR A,B,C := 0;
+BEGIN 
+    A := -A -A;
+    A := -A --A;
+    A := +A-+A;
+    A := +A++A;
+    A := -A  *-A;
+    IF A
+        A := 1;
+    END;
+END;
+
+

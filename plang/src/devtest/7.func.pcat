@@ -1,0 +1,30 @@
+(* function *)
+
+PROGRAM IS
+    VAR x : INTEGER := 0;
+    PROCEDURE f (n: INTEGER) : INTEGER IS
+    BEGIN
+        IF n <= 2 THEN
+            RETURN 1;
+        ELSE
+            RETURN f(n-1) + f(n-2);
+        END;
+    END;
+    VAR y : INTEGER := 0;
+BEGIN
+
+    FOR x := 0 TO 5 DO
+        y := f(x);
+        WRITE("f(", x, ") = ", y);
+    END;
+
+    LOOP
+        READ(x);
+        IF x < 0 THEN
+            EXIT;
+        END;
+        WRITE("f(", x, ") = ", f(x));
+    END;
+
+    (*RETURN 0;*)
+END;

@@ -1,0 +1,12 @@
+(* record declare *)
+
+PROGRAM IS
+    TYPE record_a IS RECORD
+        x : INTEGER;
+        y : REAL;
+    END;
+    VAR rec : record_a := record_a { x := 233, y := 9.9 };
+BEGIN 
+
+END;
+

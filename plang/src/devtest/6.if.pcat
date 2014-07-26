@@ -1,0 +1,19 @@
+(* if statement *)
+
+PROGRAM IS
+    VAR x : INTEGER := 0;
+BEGIN 
+
+    FOR x := 0 TO 3 DO
+        WRITE("x = ", x);
+        IF x = 0 THEN
+            WRITE("x is zero");
+        ELSIF x = 3 THEN
+            WRITE("x is three");
+        ELSE
+            WRITE("x is nether zero or three");
+        END;
+        WRITE("");
+    END;
+
+END;

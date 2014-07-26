@@ -1,0 +1,19 @@
+(* test for performance *)
+
+PROGRAM IS
+    VAR i : INTEGER := 0;
+    PROCEDURE innerprof() IS
+    BEGIN
+        FOR i := 0 TO 1000 DO
+            WRITE(i);
+        END;
+    END;
+BEGIN
+
+    FOR i := 0 TO 1000 DO
+        WRITE(i);
+    END;
+
+    innerprof();
+
+END;

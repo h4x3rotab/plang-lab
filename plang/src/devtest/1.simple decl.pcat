@@ -1,0 +1,10 @@
+(* basic variables *)
+
+PROGRAM IS
+    VAR i, j : INTEGER := 1; 
+    VAR x : INTEGER := 2;
+    VAR y := 3;
+BEGIN 
+
+END;
+
