@@ -9,7 +9,7 @@ PCAT LLVM compiler 1.0 (based on LLVM)
 
 "The **PCAT** language (**P**ascal **C**lone with an **AT**titude) is a small imperative
 programming language with nested functions, record values with implicit pointers, arrays, 
-integer and real variables, and a few simple structured control constructs." [1]
+integer and real variables, and a few simple structured control constructs." [[1]]
 
 # PLANG
 
@@ -32,6 +32,22 @@ set correctly. Finally, run `make` command and you will get an executable `plang
 # Usage
 
 Try `plang --help`.
+
+    USAGE: plang [options] <input file>
+
+    OPTIONS:
+      -S                - Output assembly file
+      -c                - Output object file
+      -emit-llvm        - Output LLVM IR code
+      -emit-llvm-stdout - Output LLVM IR to stdout
+      -help             - Display available options (-help-hidden for more)
+      -o=<filename>     - Specify output filename
+      -show-ast         - Output abstract syntax tree to stdout
+      -version          - Display the version of this program
+
+Example:
+
+    plang -o hello HelloWorld.pcat
 
 # Documents
 
